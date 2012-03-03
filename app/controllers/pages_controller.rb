@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  include ApplicationHelper
   def home
     @title = "Home"
   end
