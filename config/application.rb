@@ -9,7 +9,13 @@ require "sprockets/railtie"
 require "rails/test_unit/railtie"
 
 # For errors like ActiveRecord::RecordNotFound
-require "active_record"
+require 'active_record'
+
+puts ActiveRecord::VERSION::STRING
+
+class Foo < ActiveRecord::Base
+  validates_uniqueness_of :bar
+end
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
